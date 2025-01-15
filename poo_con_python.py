@@ -42,10 +42,22 @@ class Personaje:
         if not enemigo.esta_vivo():
             enemigo.morir()
         print("Vida de", enemigo.nombre, "es", enemigo.vida)
-        
+    
+#Creando classe "Guerrero" que hereda de su clase padre "Personaje"
+class Guerrero(Personaje):
+    #Sobreescribir el constructor
+    def __init__(self, nombre, fuerza, inteligencia, defensa, vida, espada):
+        #LLamar a la clase padre
+        super().__init__(nombre, fuerza, inteligencia, defensa, vida)
+        self.espada = espada
+
+hercules = Guerrero("Hercules", 80, 50, 100, 100, 5)
+hercules.atributos()
+print(hercules.espada)
+
 #Variable de constructor de la clase
-mi_personaje = Personaje("El Troyano", 20, 15, 12, 20) #nombre, fuerza, inteligencia, defensa, vida
-mi_enemigo = Personaje("Dario", 10, 15, 12, 20)
-mi_personaje.atributos()
-mi_personaje.atacar(mi_enemigo)
-mi_enemigo.atributos()
+#mi_personaje = Personaje("El Troyano", 20, 15, 12, 20) #nombre, fuerza, inteligencia, defensa, vida
+#mi_enemigo = Personaje("Dario", 10, 15, 12, 20)
+#mi_personaje.atributos()
+#mi_personaje.atacar(mi_enemigo)
+#mi_enemigo.atributos()
