@@ -33,7 +33,7 @@ class Personaje:
         print(self.nombre, "ha muerto")
         
     def daño(self, enemigo):
-        return self.fuerza - enemigo.defensa
+        return self.fuerza - enemigo.defensa if self.fuerza >= enemigo.defensa else 0
     
     def atacar(self, enemigo):
         daño = self.daño(enemigo)
@@ -44,7 +44,7 @@ class Personaje:
         print("Vida de", enemigo.nombre, "es", enemigo.vida)
         
 #Variable de constructor de la clase
-mi_personaje = Personaje("El Troyano", 200, 15, 12, 20)
+mi_personaje = Personaje("El Troyano", 20, 15, 12, 20) #nombre, fuerza, inteligencia, defensa, vida
 mi_enemigo = Personaje("Dario", 10, 15, 12, 20)
 mi_personaje.atributos()
 mi_personaje.atacar(mi_enemigo)
